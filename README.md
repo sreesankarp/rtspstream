@@ -1,6 +1,3 @@
-Here's the README description customized with your repository details:
-
----
 
 # RTSP Stream to Web Page
 
