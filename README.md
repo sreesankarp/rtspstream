@@ -1,4 +1,4 @@
-Here's a README description that you can use for your GitHub repository:
+Here's the README description customized with your repository details:
 
 ---
 
@@ -18,8 +18,8 @@ Before running this project, ensure you have the following installed:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/sreesankarp/rtspstream.git
+cd rtspstream
 ```
 
 ### Step 2: Create a Virtual Environment (Optional but recommended)
@@ -74,7 +74,7 @@ Replace the placeholders with your RTSP stream parameters:
 
 - `username`: Your RTSP stream username
 - `password`: Your RTSP stream password
-- `ip`: IP address of the camera
+- `ip`: IP address of the nvr
 - `port`: Port number of the RTSP stream (typically 554)
 - `channel`: (Optional) The channel number (default is 1)
 - `subtype`: (Optional) The subtype number (default is 0)
@@ -99,4 +99,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-You can replace `"your-username/your-repo-name"` with the appropriate GitHub username and repository name, and customize the text as needed.
+You can add this content to your repository's `README.md` file.
