@@ -64,7 +64,7 @@ python app.py
 Open your web browser and navigate to:
 
 ```
-http://<your_server_ip>:5000/video_feed?username=your_username&password=your_password&ip=your_ip_address&port=your_port&channel=1&subtype=0
+http://<your_server_ip>:5005/video_feed?username=your_username&password=your_password&ip=your_ip_address&port=your_port&channel=1&subtype=0
 ```
 
 Replace the placeholders with your RTSP stream parameters:
@@ -79,7 +79,7 @@ Replace the placeholders with your RTSP stream parameters:
 ### Example URL:
 
 ```
-http://127.0.0.1:5000/video_feed?username=admin&password=12345&ip=192.168.1.100&port=554&channel=1&subtype=0
+http://127.0.0.1:5005/video_feed?username=admin&password=12345&ip=192.168.1.100&port=554&channel=1&subtype=0
 ```
 
 ### Step 3: Full-Screen Video
