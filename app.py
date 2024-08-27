@@ -3,13 +3,15 @@ import cv2
 
 app = Flask(__name__)
 
-def gen_frames(rtsp_url):
+def gen_frames(rtsp_url, width=None, height=None):
     cap = cv2.VideoCapture(rtsp_url)  # Capture the RTSP stream
     while True:
         success, frame = cap.read()
         if not success:
             break
         else:
+            if width and height:
+                frame = cv2.resize(frame, (width, height))  # Resize the frame
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
@@ -23,11 +25,14 @@ def video_feed():
     port = request.args.get('port')
     channel = request.args.get('channel', '1')  # Default to channel 1
     subtype = request.args.get('subtype', '0')  # Default to subtype 0
+    width = int(request.args.get('width', 640))  # Default width
+    height = int(request.args.get('height', 480))  # Default height
 
     # Construct the RTSP URL based on query parameters
     rtsp_url = f"rtsp://{username}:{password}@{ip}:{port}/cam/realmonitor?channel={channel}&subtype={subtype}"
     
-    return Response(gen_frames(rtsp_url), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen_frames(rtsp_url, width, height), mimetype='multipart/x-mixed-replace; boundary=frame')
+
 
 @app.route('/')
 def index():
